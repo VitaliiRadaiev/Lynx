@@ -160,31 +160,69 @@ spollerInit()
 // === // Spollers ==================================================================
 
 
-// === lazy load ==================================================================
-document.addEventListener("DOMContentLoaded", function () {
-	var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+// // === lazy load ==================================================================
+// document.addEventListener("DOMContentLoaded", function () {
+// 	// var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
 
-	if ("IntersectionObserver" in window) {
-		let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
-			entries.forEach(function (entry) {
-				if (entry.isIntersecting) {
-					let lazyImage = entry.target;
-					lazyImage.src = lazyImage.dataset.src;
-					//lazyImage.srcset = lazyImage.dataset.srcset;
-					lazyImage.classList.remove("lazy");
-					lazyImageObserver.unobserve(lazyImage);
-				}
-			});
-		});
+// 	// if ("IntersectionObserver" in window) {
+// 	// 	let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
+// 	// 		entries.forEach(function (entry) {
+// 	// 			if (entry.isIntersecting) {
+// 	// 				let lazyImage = entry.target;
+// 	// 				lazyImage.src = lazyImage.dataset.src;
+// 	// 				//lazyImage.srcset = lazyImage.dataset.srcset;
+// 	// 				lazyImage.classList.remove("lazy");
+// 	// 				lazyImageObserver.unobserve(lazyImage);
+// 	// 			}
+// 	// 		});
+// 	// 	});
 
-		lazyImages.forEach(function (lazyImage) {
-			lazyImageObserver.observe(lazyImage);
-		});
-	} else {
-		// Possibly fall back to event handlers here
-	}
-});
-// === // lazy load ==================================================================;
+// 	// 	lazyImages.forEach(function (lazyImage) {
+// 	// 		lazyImageObserver.observe(lazyImage);
+// 	// 	});
+// 	// } else {
+// 	// 	// Possibly fall back to event handlers here
+// 	// }
+// 	console.log('test22');
+	
+
+// 	let observBlocks = [].slice.call(document.querySelectorAll("._observe"));
+// 		console.log(observBlocks);
+		
+// 		if ("IntersectionObserver" in window) {
+// 			let observBlock = new IntersectionObserver(function(entries, observer) {
+// 				entries.forEach(function(entry) {
+// 					if(entry.isIntersecting) {
+// 						let block = entry.target;
+// 						console.log(this);
+// 						console.log(entry);
+// 						observBlock.unobserve(block);
+						
+// 					}
+// 				})
+// 			});
+
+// 			observBlocks.forEach(function (block) {
+// 				observBlock.observe(block);
+// 			});
+// 		}
+// });
+// // === // lazy load ==================================================================
+
+// === Плавный скрол на якорях ==================================================================
+if($('.anchor').length>0) {
+	$(".anchor").click(function() {
+	  var elementClick = $(this).attr("href")
+	  var destination = $(elementClick).offset().top - 100;
+	  jQuery("html:not(:animated),body:not(:animated)").animate({
+		scrollTop: destination
+	  }, 600);
+	  return false;
+	});
+}
+// === Плавный скрол на якорях ==================================================================
+
+;
 	// Dynamic Adapt v.1
 // HTML data-da="where(uniq class name),position(digi),when(breakpoint)"
 // e.x. data-da="item,2,992"
@@ -937,70 +975,103 @@ if(priceSlider) {
 		})
 	}
 	// === // product handler ========================================
+
+	const observer = new IntersectionObserver(entries => {
+		entries.forEach(elem => {
+		  if (elem.isIntersecting) {
+		   let id = elem.target.id;
+
+			console.dir(elem.target);
+			let menuList = document.querySelector('.menu__list');
+
+			for(let item of menuList.children) {
+				let a = item.querySelector('a');
+				let anchor = a.getAttribute('href').replace('#', '');
+				if(id == anchor) {
+					item.classList.add('_active');
+
+					for(let i of menuList.children) {
+						if(i === item) {
+							continue
+						} 
+						i.classList.remove('_active');
+					}
+				}
+				 
+			}
+		  }
+		});
+	  });
+	  
+
+	  let observeBlock = document.querySelectorAll('._observe');
+	  if(observeBlock) {
+		  window.addEventListener('scroll', () => {
+  
+			  for(let item of observeBlock) {
+				  if(item.getBoundingClientRect().top <= (document.documentElement.clientHeight / 2) && item.getBoundingClientRect().bottom >= (document.documentElement.clientHeight / 2)) {
+					  let id = item.id;
+					  
+					  let menuList = document.querySelector('.menu__list');
+
+					  for(let item of menuList.children) {
+						  let a = item.querySelector('a');
+						  let anchor = a.getAttribute('href').replace('#', '');
+						  if(id == anchor) {
+							  item.classList.add('_active');
+		  
+							  for(let i of menuList.children) {
+								  if(i === item) {
+									  continue
+								  } 
+								  i.classList.remove('_active');
+							  }
+						  }
+						   
+					  }
+				  }
+			  }
+		  })
+	  }
+
+
+	  const animItems = document.querySelectorAll('._anim-items');
+
+if (animItems.length > 0) {
+	window.addEventListener('scroll', animOnScroll);
+	function animOnScroll() {
+		for (let index = 0; index < animItems.length; index++) {
+			const animItem = animItems[index];
+			const animItemHeight = animItem.offsetHeight;
+			const animItemOffset = offset(animItem).top;
+			const animStart = 4;
+
+			let animItemPoint = window.innerHeight - animItemHeight / animStart;
+			if (animItemHeight > window.innerHeight) {
+				animItemPoint = window.innerHeight - window.innerHeight / animStart;
+			}
+
+			if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
+				animItem.classList.add('_active');
+			} else {
+				if (!animItem.classList.contains('_anim-no-hide')) {
+					animItem.classList.remove('_active');
+				}
+			}
+		}
+	}
+	function offset(el) {
+		const rect = el.getBoundingClientRect(),
+			scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+			scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+		return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+	}
+
+	setTimeout(() => {
+		animOnScroll();
+	}, 300);
+}
+
 	
 });
 
-//// html example --- <img class="lazy" data-src="https://images.unsplash.com/photo-1606851091851-e8c8c0fca5ba?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" src="img/photo/placeholder.jpg" alt="img">
-
-
-// === lazy load ==================================================================
-document.addEventListener("DOMContentLoaded", function () {
-	var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
-    let active = false;
-
-	if ("IntersectionObserver" in window) {
-        console.log('test 1');
-        
-		let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
-			entries.forEach(function (entry) {
-				if (entry.isIntersecting) {
-					let lazyImage = entry.target;
-					lazyImage.src = lazyImage.dataset.src;
-					//lazyImage.srcset = lazyImage.dataset.srcset;
-					lazyImage.classList.remove("lazy");
-					lazyImageObserver.unobserve(lazyImage);
-				}
-			});
-		});
-
-		lazyImages.forEach(function (lazyImage) {
-			lazyImageObserver.observe(lazyImage);
-		});
-	} else {
-        console.log('test 2');
-        const lazyLoad = function() {
-            if (active === false) {
-              active = true;
-              setTimeout(function() {
-                lazyImages.forEach(function(lazyImage) {
-                  if ((lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== "none") {
-                    lazyImage.src = lazyImage.dataset.src;
-                    //lazyImage.srcset = lazyImage.dataset.srcset;
-                    lazyImage.classList.remove("lazy");
-        
-                    lazyImages = lazyImages.filter(function(image) {
-                      return image !== lazyImage;
-                    });
-        
-                    if (lazyImages.length === 0) {
-                      document.removeEventListener("scroll", lazyLoad);
-                      window.removeEventListener("resize", lazyLoad);
-                      window.removeEventListener("orientationchange", lazyLoad);
-                    }
-                  }
-                });
-        
-                active = false;
-              }, 200);
-            }
-          };
-      
-          lazyLoad();
-        
-          document.addEventListener("scroll", lazyLoad);
-          window.addEventListener("resize", lazyLoad);
-          window.addEventListener("orientationchange", lazyLoad);
-    }
-    
-});
-// === // lazy load ==================================================================;

@@ -129,28 +129,65 @@ spollerInit()
 // === // Spollers ==================================================================
 
 
-// === lazy load ==================================================================
-document.addEventListener("DOMContentLoaded", function () {
-	var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+// // === lazy load ==================================================================
+// document.addEventListener("DOMContentLoaded", function () {
+// 	// var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
 
-	if ("IntersectionObserver" in window) {
-		let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
-			entries.forEach(function (entry) {
-				if (entry.isIntersecting) {
-					let lazyImage = entry.target;
-					lazyImage.src = lazyImage.dataset.src;
-					//lazyImage.srcset = lazyImage.dataset.srcset;
-					lazyImage.classList.remove("lazy");
-					lazyImageObserver.unobserve(lazyImage);
-				}
-			});
-		});
+// 	// if ("IntersectionObserver" in window) {
+// 	// 	let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
+// 	// 		entries.forEach(function (entry) {
+// 	// 			if (entry.isIntersecting) {
+// 	// 				let lazyImage = entry.target;
+// 	// 				lazyImage.src = lazyImage.dataset.src;
+// 	// 				//lazyImage.srcset = lazyImage.dataset.srcset;
+// 	// 				lazyImage.classList.remove("lazy");
+// 	// 				lazyImageObserver.unobserve(lazyImage);
+// 	// 			}
+// 	// 		});
+// 	// 	});
 
-		lazyImages.forEach(function (lazyImage) {
-			lazyImageObserver.observe(lazyImage);
-		});
-	} else {
-		// Possibly fall back to event handlers here
-	}
-});
-// === // lazy load ==================================================================
+// 	// 	lazyImages.forEach(function (lazyImage) {
+// 	// 		lazyImageObserver.observe(lazyImage);
+// 	// 	});
+// 	// } else {
+// 	// 	// Possibly fall back to event handlers here
+// 	// }
+// 	console.log('test22');
+	
+
+// 	let observBlocks = [].slice.call(document.querySelectorAll("._observe"));
+// 		console.log(observBlocks);
+		
+// 		if ("IntersectionObserver" in window) {
+// 			let observBlock = new IntersectionObserver(function(entries, observer) {
+// 				entries.forEach(function(entry) {
+// 					if(entry.isIntersecting) {
+// 						let block = entry.target;
+// 						console.log(this);
+// 						console.log(entry);
+// 						observBlock.unobserve(block);
+						
+// 					}
+// 				})
+// 			});
+
+// 			observBlocks.forEach(function (block) {
+// 				observBlock.observe(block);
+// 			});
+// 		}
+// });
+// // === // lazy load ==================================================================
+
+// === Плавный скрол на якорях ==================================================================
+if($('.anchor').length>0) {
+	$(".anchor").click(function() {
+	  var elementClick = $(this).attr("href")
+	  var destination = $(elementClick).offset().top - 100;
+	  jQuery("html:not(:animated),body:not(:animated)").animate({
+		scrollTop: destination
+	  }, 600);
+	  return false;
+	});
+}
+// === Плавный скрол на якорях ==================================================================
+

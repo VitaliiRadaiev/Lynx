@@ -1,0 +1,19 @@
+.footer {
+    background: $mainColor;
+    &__body {
+        min-height: 68px;
+        text-align: center;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        line-height: 100%;
+        color: #FFFFFF;
+
+        @media (max-width: $md4+px) {
+            font-size: 14px;
+        }
+    }
+}

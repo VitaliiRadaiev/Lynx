@@ -18,14 +18,14 @@
 					</div>
 					<nav class="top-line__menu menu">
 						<ul class="menu__list">
-							<li class="menu__item _active">
-								<a href="#" class="menu__link">About</a>
+							<li class="menu__item">
+								<a href="#about" class="menu__link anchor">About</a>
 							</li>
 							<li class="menu__item">
-								<a href="#" class="menu__link">Products</a>
+								<a href="#product" class="menu__link anchor">Products</a>
 							</li>
 							<li class="menu__item">
-								<a href="#" class="menu__link">Contact</a>
+								<a href="#contact" class="menu__link anchor">Contact</a>
 							</li>
 						</ul>
 					</nav>
@@ -39,10 +39,10 @@
 					<img src="img/photo/header-bg.svg" alt="bg">
 				</div>
 				<div class="header__body container_large">
-					<div class="header__logo">
+					<div class="header__logo _anim-items fadeIn _anim-no-hide">
 						<img src="img/logo/logo-text.svg" alt="logo">
 					</div>
-					<h1 class="header__title title-1">
+					<h1 class="header__title title-1 _anim-items fadeIn _anim-no-hide">
 						Modular Trading Solutions
 					</h1>
 				</div>
@@ -52,20 +52,20 @@
 			<!-- == PAGE CONTENT ================== -->
 			<main class="page"> 
 
-				<section class="about background">
+				<section id="about" class="about background _observe">
 					<div class="about__body container">
-						<div class="about__img">
+						<div class="about__img _anim-items fadeIn _anim-no-hide">
 							<img src="img/photo/about-img.png" alt="img">
 						</div>
-						<h2 class="about__title title-1">
+						<h2 class="about__title title-1 _anim-items fadeIn _anim-no-hide">
 							About Lynx
 						</h2>
-						<div class="about__subtext">
+						<div class="about__subtext _anim-items fadeIn _anim-no-hide">
 							Lynx was established in 2000 in New York. It designs and develops technology modules for the US Equity markets, providing complete trading solutions to Broker Dealers
 						</div>
 						<div class="about__list">
 							
-								<div class="about__list-item">
+								<div class="about__list-item _anim-items fadeIn _anim-no-hide">
 									<div class="card-about ">
 										<div class="card-about__img">
 											<span>
@@ -85,7 +85,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="about__list-item">
+								<div class="about__list-item _anim-items fadeIn _anim-no-hide">
 									<div class="card-about card-about_img-centr">
 										<div class="card-about__img">
 											<span>
@@ -110,7 +110,7 @@
 									</div>
 								</div>
 			
-								<div class="about__list-item">
+								<div class="about__list-item _anim-items fadeIn _anim-no-hide">
 									<div class="card-about">
 										<div class="card-about__img">
 											<span>
@@ -130,7 +130,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="about__list-item">
+								<div class="about__list-item _anim-items fadeIn _anim-no-hide">
 									<div class="card-about card-about_img-centr">
 										<div class="card-about__img">
 											<span>
@@ -162,13 +162,13 @@
 				</section>
 
 
-				<section class="products">
+				<section id="product" class="products _observe">
 					<div class="products__body container">
-						<h2 class="products__title title-1">
+						<h2 class="products__title title-1 _anim-items fadeIn _anim-no-hide">
 							Products
 						</h2>
 
-						<div class="products__list">
+						<div class="products__list _anim-items fadeIn _anim-no-hide">
 
 							<div class="products__item">
 								<div class="card-product text-content" style="background-color: #FCDEFF;">
@@ -914,10 +914,53 @@
 						</div>
 					</div>
 				</section>
+
+				<section id="contact" class="contact _observe">
+					<div class="contact__body container">
+						<div class="contact__column contact__column_1">
+							<div class="contact__logo _anim-items fadeIn _anim-no-hide">
+								<img src="img/logo/logo-text.svg" alt="logo">
+							</div>
+							<div class="contact__text _anim-items fadeIn _anim-no-hide">
+								<p>
+									282 Grand Avenue, STE 5
+									Englewood, NJ 07631
+								</p>
+								<p>
+									1-646-902-9844
+									info@lynxtrading.com
+								</p>
+							</div>
+						</div>
+						<div class="contact__column contact__column_2">
+							<form action="#" class="from-contact _anim-items fadeIn _anim-no-hide" >
+								<div class="from-contact__inner">
+									<div class="from-contact__input-wrap from-contact__input-wrap_half">
+										<input type="text" class="input" placeholder="First Name *">
+									</div>
+									<div class="from-contact__input-wrap from-contact__input-wrap_half">
+										<input type="text" class="input" placeholder="Last Name *">
+									</div>
+									<div class="from-contact__input-wrap">
+										<input type="email" class="input" placeholder="Email Address *">
+									</div>
+									<div class="from-contact__textarea-wrap">
+										<textarea class="textarea"></textarea>
+									</div>
+									<button type="submit" class="submit-btn">submit</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</section>
             </main>
 			<!-- == // PAGE CONTENT ================== -->
 			<!-- == FOOTER ================== -->
-			@@include('common/footer/_footer.html',{})
+			<footer class="footer _anim-items fadeIn _anim-no-hide">
+				<div class="footer__body container">
+					© 2020 LYNX TRADING TECHNOLOGIES
+				</div>
+			</footer>
 			<!-- == // FOOTER ================== -->
 		</div>
 		<!-- == // WRAPPER ================== -->

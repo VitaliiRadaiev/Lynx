@@ -141,7 +141,103 @@ $(document).ready(function () {
 		})
 	}
 	// === // product handler ========================================
+
+	const observer = new IntersectionObserver(entries => {
+		entries.forEach(elem => {
+		  if (elem.isIntersecting) {
+		   let id = elem.target.id;
+
+			console.dir(elem.target);
+			let menuList = document.querySelector('.menu__list');
+
+			for(let item of menuList.children) {
+				let a = item.querySelector('a');
+				let anchor = a.getAttribute('href').replace('#', '');
+				if(id == anchor) {
+					item.classList.add('_active');
+
+					for(let i of menuList.children) {
+						if(i === item) {
+							continue
+						} 
+						i.classList.remove('_active');
+					}
+				}
+				 
+			}
+		  }
+		});
+	  });
+	  
+
+	  let observeBlock = document.querySelectorAll('._observe');
+	  if(observeBlock) {
+		  window.addEventListener('scroll', () => {
+  
+			  for(let item of observeBlock) {
+				  if(item.getBoundingClientRect().top <= (document.documentElement.clientHeight / 2) && item.getBoundingClientRect().bottom >= (document.documentElement.clientHeight / 2)) {
+					  let id = item.id;
+					  
+					  let menuList = document.querySelector('.menu__list');
+
+					  for(let item of menuList.children) {
+						  let a = item.querySelector('a');
+						  let anchor = a.getAttribute('href').replace('#', '');
+						  if(id == anchor) {
+							  item.classList.add('_active');
+		  
+							  for(let i of menuList.children) {
+								  if(i === item) {
+									  continue
+								  } 
+								  i.classList.remove('_active');
+							  }
+						  }
+						   
+					  }
+				  }
+			  }
+		  })
+	  }
+
+
+	  const animItems = document.querySelectorAll('._anim-items');
+
+if (animItems.length > 0) {
+	window.addEventListener('scroll', animOnScroll);
+	function animOnScroll() {
+		for (let index = 0; index < animItems.length; index++) {
+			const animItem = animItems[index];
+			const animItemHeight = animItem.offsetHeight;
+			const animItemOffset = offset(animItem).top;
+			const animStart = 4;
+
+			let animItemPoint = window.innerHeight - animItemHeight / animStart;
+			if (animItemHeight > window.innerHeight) {
+				animItemPoint = window.innerHeight - window.innerHeight / animStart;
+			}
+
+			if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
+				animItem.classList.add('_active');
+			} else {
+				if (!animItem.classList.contains('_anim-no-hide')) {
+					animItem.classList.remove('_active');
+				}
+			}
+		}
+	}
+	function offset(el) {
+		const rect = el.getBoundingClientRect(),
+			scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+			scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+		return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+	}
+
+	setTimeout(() => {
+		animOnScroll();
+	}, 300);
+}
+
 	
 });
 
-//@@include('plagins/lazy-load.js');
