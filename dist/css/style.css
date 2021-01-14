@@ -1156,8 +1156,8 @@ textarea {
   margin-top: 83px;
   border-radius: 45px;
   padding: 17px 15px;
-  -webkit-filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.1));
-          filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.1));
+  -webkit-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .card-product__list-inner {
@@ -1576,6 +1576,7 @@ textarea {
     display: block;
     margin-top: 20px;
     padding: 0;
+    border-radius: 25px;
   }
 
   .card-product__list-inner {
