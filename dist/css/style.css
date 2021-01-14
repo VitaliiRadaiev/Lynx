@@ -1088,6 +1088,10 @@ textarea {
   padding: 25px 15px;
 }
 
+.card-product__inner._active .card-product__plus {
+  top: 33px;
+}
+
 .card-product__inner._active .card-product__plus:before {
   height: 0;
 }
@@ -1098,7 +1102,7 @@ textarea {
 
 .card-product__plus {
   position: absolute;
-  top: 33px;
+  top: 50%;
   right: 20px;
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
@@ -1539,7 +1543,7 @@ textarea {
   }
 
   .card-product__inner {
-    padding: 10px 15px;
+    padding: 25px 15px;
     min-height: 70px;
     display: -webkit-box;
     display: -ms-flexbox;

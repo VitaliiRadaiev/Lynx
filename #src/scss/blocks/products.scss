@@ -211,18 +211,19 @@
         
         
         @media (max-width: $md2+px) {
-            padding: 10px 15px;
+            padding: 25px 15px;
             min-height: 70px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             position: relative;
+           // overflow: hidden;
         }
         &._active {
             padding: 25px 15px;
 
             & .card-product__plus {
-
+                top: 33px;
                 &:before {
                     height: 0;
                 }
@@ -237,7 +238,7 @@
 
     &__plus {
         position: absolute;
-        top: 33px;
+        top: 50%;
         right: 20px;
         transform: translateY(-50%);
         height: 25px;
