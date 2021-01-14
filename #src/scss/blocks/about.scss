@@ -1,5 +1,13 @@
 .about {
     margin-bottom: 146px;
+
+    @media (max-width: $md3+px) {
+        margin-bottom: 90px;
+    }
+
+    @media (max-width: $md4+px) {
+        margin-bottom: 60px;
+    }
     &__body {
         padding-top: 29px;
         padding-bottom: 120px;

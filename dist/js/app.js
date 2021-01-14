@@ -856,28 +856,72 @@ if(priceSlider) {
 	if(productList) {
 		for(let item of productList.children) {
 			item.addEventListener('click', function(e) {
-				item.classList.add('_big');
-				item.classList.remove('_mini');
-				item.style.gridRowEnd = 'span ' + (productList.children.length -1);
-				item.style.animation = 'fadeInCard 1.6s ease forwards, scaleCard 0.6s ease forwards';
-				productList.classList.add('_open');
-
-				let count = ((productList.children.length - 1)) * 0.1;
-				
-				
-				
-				for(let i of productList.children) {
-					if( i == this) {
-						continue
-					} else {
-						i.classList.remove('_big');
-						i.classList.add('_mini');
-						i.style.gridRowEnd = 'auto';
-						i.style.animation = 'fadeInCard2 0.6s linear forwards ' + count + 's';
-						count -= 0.1;
+				if(document.documentElement.clientWidth > 991) {
+					item.classList.add('_big');
+					item.classList.remove('_mini');
+					item.style.gridRowEnd = 'span ' + (productList.children.length -1);
+					item.style.animation = 'fadeInCard 1.6s ease forwards, scaleCard 0.6s ease forwards';
+					productList.classList.add('_open');
+	
+					let count = ((productList.children.length - 1)) * 0.1;
+					
+					
+					
+					for(let i of productList.children) {
+						if( i == this) {
+							continue
+						} else {
+							i.classList.remove('_big');
+							i.classList.add('_mini');
+							i.style.gridRowEnd = 'auto';
+							i.style.animation = 'fadeInCard2 0.6s linear forwards ' + count + 's';
+							count -= 0.1;
+						}
 					}
 				}
+
 			})
+
+			//let title = item.querySelector('.card-product__title');
+			
+		}
+
+		let titles = document.querySelectorAll('.card-product__title');
+		if(titles.length) {
+			let arr = [];
+			let maxHeight;
+
+			titles.forEach(title => {
+				title.addEventListener('click', function(e){
+					if(document.documentElement.clientWidth < 992) {
+						this.closest('.card-product__inner').classList.toggle('_active');
+						_slideToggle(this.nextElementSibling);
+						
+						for(let i of titles) {
+							if( i == this) {
+								continue
+							} else {
+								i.closest('.card-product__inner').classList.remove('_active');
+								_slideUp(i.nextElementSibling);
+							}
+							
+						}
+					}
+				});
+
+				arr.push(title.clientHeight);
+
+				
+			})
+			if(document.documentElement.clientWidth > 991) {
+				maxHeight = Math.max(...arr);
+				titles.forEach(title => {
+					title.style.height = maxHeight + 'px';
+				})
+			}
+
+		
+			
 		}
 
 		document.body.addEventListener('click', (e)=> {
