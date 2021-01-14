@@ -1,0 +1,138 @@
+.about {
+    margin-bottom: 146px;
+    &__body {
+        padding-top: 29px;
+        padding-bottom: 120px;
+    }
+
+    &__img {
+        text-align: center;
+        margin-bottom: 138px;
+        & img {
+            max-width: 100%;
+        }
+    }
+
+    &__title {
+        text-align: center;
+        margin-bottom: 39px;
+    }
+
+    &__subtext {
+        max-width: 10021px;
+        margin: 0 auto 87px;
+        color: $textColor;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 109.6%;
+        text-align: center;
+    }
+
+    &__list {
+        margin: 0 -13.5px;
+        display: flex;
+        flex-wrap: wrap;
+
+
+        @media (max-width: $md2+px) {
+            display: block;
+        }
+
+        & .column {
+            flex: 0 1 50%;
+            padding: 0 13.5px;
+        }
+
+
+    }
+
+    &__list-item {
+      margin-bottom: 30px;
+      width: 100%;
+    }
+}
+
+.card-about {
+    display: flex;
+    padding: 49px 36px 38px 36px;
+    background-color: #fff;
+    border: 1px solid #045CEA;
+    border-radius: 50px;
+
+    @media (max-width: 575px) {
+        padding: 30px 15px;
+    }
+
+    &_img-centr {
+        & .card-about__img {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__img {
+        margin-right: 43px;
+        flex: 0 0 auto;
+
+        @media (max-width: 575px) {
+            margin-right: 20px;
+        }
+
+        @media (max-width: $md4+px) {
+            margin-right: 10px;
+        }
+
+        & > span {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            height: 125px;
+            min-width: 125px;
+
+            @media (max-width: 575px) {
+                height: 65px;
+                min-width: 65px;
+            }
+
+            @media (max-width: $md4+px) {
+                height: 45px;
+                min-width: 45px;
+            }
+
+            & img {
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+    }
+
+    &__text-wrap {
+        flex: 1 1 auto;
+    }
+
+    &__title {
+        margin-bottom: 29px;
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 1.39em;
+        color: $textColor;
+
+        @media (max-width: 575px) {
+            font-size: 14px;
+        }
+
+        & * {
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        & p {     
+                margin-bottom: 1.4em;
+
+        }
+    }
+}

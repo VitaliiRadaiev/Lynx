@@ -1,0 +1,365 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+	@font-face {
+		font-family: $font_name;
+		font-display: swap;
+		src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+		font-weight: #{$weight};
+		font-style: #{$style};
+	}
+}
+// ==== ШРИФТЫ ===========================================================================================
+@import "fonts";
+// ==== // ШРИФТЫ ===========================================================================================
+
+// ==== ПЕРЕМЕННЫЕ ===========================================================================================
+@import "vars"; 
+// ==== // ПЕРЕМЕННЫЕ ===========================================================================================
+
+
+// ==== НОРМАЛАЙЗ ===========================================================================================
+@import "normalize";
+// ==== // НОРМАЛАЙЗ ===========================================================================================
+
+//<МИКСИНЫ>===============================================================================================
+@import "mixins.scss";
+//</МИКСИНЫ>===============================================================================================
+
+//<ICOMOON>===============================================================================================
+//@import "../icomoon/style";
+//</ICOMOON>===============================================================================================
+
+//<FANCYBOX>===============================================================================================
+//@import "plagins/fancybox.scss";
+//<FANCYBOX>===============================================================================================
+
+// ==== ПЛАГИНЫ ===========================================================================================
+//@import "plagins/swiper-bundle";
+//@import "plagins/drift-basic";
+// ==== // ПЛАГИНЫ ===========================================================================================
+
+// ==== НАЧАЛЬНЫЕ САТИЛИ ФОРМЫ ===========================================================================================
+//@import "forms";
+// ==== НАЧАЛЬНЫЕ САТИЛИ ФОРМЫ ===========================================================================================
+
+// ==== BORDER ===========================================================================================
+@import "../common/burger/burger";
+// ==== BORDER ===========================================================================================
+
+// ==== POPUP ===========================================================================================
+//@import "common/popup/popup";
+// ==== // POPUP ===========================================================================================
+
+
+
+* {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+*,
+*:before,
+*:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,
+:active {
+	outline: none;
+}
+a:focus,
+a:active {
+	outline: none;
+}
+aside,
+nav,
+footer,
+header,
+section {
+	display: block;
+}
+html {
+	font-size: 10px;
+}
+html,
+body {
+	height: 100%;
+	min-width: $minwidth;
+	margin: 0 auto;
+}
+body {
+	line-height: 1;
+	font-family: $mainFontFamily;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	color: $textColor;
+	font-size: 1.4rem;
+
+	opacity: 0;
+	transition: opacity .8s ease;
+
+	&.lock {
+		overflow: hidden;
+	}
+
+	&.is-load {
+		opacity: 1;
+	}
+
+}
+
+input,
+button,
+textarea {
+	font-family: $mainFontFamily;
+}
+input::-ms-clear {
+	display: none;
+}
+button {
+	cursor: pointer;
+}
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+a,
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+ul li {
+	list-style: none;
+}
+img {
+	vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+
+
+.center {
+	text-align: center;
+}
+
+.background {
+	background-color: #FCFCFF;
+}
+
+
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+
+	&.loaded {
+	}
+}
+
+.page {
+	flex: 1 1 auto;
+}
+
+
+.container {
+	max-width: 1500px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.container_large {
+	max-width: 1700px;
+	width: 90%;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.ibg {
+	position: relative;
+	img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+	}
+}
+
+.logo {
+	max-width: 94px;
+	width: 100%;
+
+	& img {
+		width: 100%;
+	}
+}
+
+
+// === title ========================================================================
+.title-1 {
+	font-weight: 800;
+	font-size: 48px;
+	line-height: 92.6%;
+	color: $titleColor;
+
+	@media (max-width: $md4+px) {
+		font-size: 28px;
+	}
+}
+.title-2 {
+
+}
+
+.title-3 {
+
+}
+
+.title-4 {
+	font-weight: 800;
+	font-size: 23px;
+	line-height: 92.6%;
+	color: $textColor;
+}
+
+.title-5 {
+	font-weight: 800;
+	font-size: 18px;
+	line-height: 92.6%;
+	color: $titleColor;
+}
+.title-6 {
+
+
+}
+
+.suptitle {
+
+}
+.subtitle {
+
+}
+
+.text {
+
+}
+// === and title ========================================================================
+
+
+
+// === btn ========================================================================
+.btn-default {
+
+}
+
+button.btn-default {
+	
+}
+
+// === and btn ========================================================================
+
+.input {
+
+}
+
+.textarea {
+
+}
+
+.link {
+
+}
+
+
+// === TEXT CONTETN BLOCK ========================================================================
+.text-content {
+	font-size: 18px;
+	line-height: 127.1%;
+	color:$textColor;
+	font-weight: 400;
+	& h1 {}
+	& h2 {
+
+	}
+	& h3 {}
+	& h4 {}
+
+	& h5 {
+		font-size: 18px;
+		text-transform: uppercase;
+		font-weight: 400;
+		margin-bottom: 1.222em;
+		& strong {
+			font-weight: 800;
+		}
+	}
+	& h6 {}
+
+	& p {
+		font-size: 18px;
+		line-height: 127.1%;
+		color:$textColor;
+		font-weight: 400;
+		margin-bottom: 1.2em;
+	}
+
+	& ul {
+		& > li {
+			margin-bottom: 4px;
+			&:before {
+				content: '•';
+				color: $textColor;
+				font-size: 18px;
+				display: inline-block;
+			}
+
+			& > ul {
+				padding-left: 29px;
+
+				& > li {
+					&:before {
+						margin-right: 6px;
+					}
+				}
+			}
+		}
+	}
+
+	& ol {}
+
+	& figure {}
+
+}
+
+// === and TEXT CONTETN BLOCK ========================================================================
+
+
+// ==== BLOCKS =====================================================
+@import "blocks/top-line";
+@import "blocks/header";
+@import "blocks/about";
+@import "blocks/products";
+// ==== BLOCKS =====================================================
