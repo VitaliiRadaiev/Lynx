@@ -197,7 +197,11 @@
     height: 100%;
 
     @media (max-width: $md2+px) {
-        border-radius: 35px;
+        border-radius: 32px;
+    }
+
+    @media (max-width: $md4+px) {
+        border-radius: 28px;
     }
 
     @media (min-width: 992px) {
@@ -222,13 +226,13 @@
             justify-content: center;
             position: relative;
            // overflow: hidden;
-           border-radius: 35px;
+           border-radius: 32px;
         }
 
         @media (max-width: $md4+px) {
-            padding: 25px 15px;
-            border-radius: 35px;
+           border-radius: 28px;
         }
+
         &._active {
             padding: 25px 15px;
 
