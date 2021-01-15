@@ -196,6 +196,10 @@
     top: 0;
     height: 100%;
 
+    @media (max-width: $md2+px) {
+        border-radius: 35px;
+    }
+
     @media (min-width: 992px) {
         &:hover {
             top: -5px;
@@ -212,12 +216,18 @@
         
         @media (max-width: $md2+px) {
             padding: 25px 15px;
-            min-height: 70px;
+            min-height: auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
             position: relative;
            // overflow: hidden;
+           border-radius: 35px;
+        }
+
+        @media (max-width: $md4+px) {
+            padding: 25px 15px;
+            border-radius: 35px;
         }
         &._active {
             padding: 25px 15px;

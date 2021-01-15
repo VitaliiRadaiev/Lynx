@@ -1542,9 +1542,13 @@ textarea {
     margin-bottom: 30px;
   }
 
+  .card-product {
+    border-radius: 35px;
+  }
+
   .card-product__inner {
     padding: 25px 15px;
-    min-height: 70px;
+    min-height: auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1556,6 +1560,7 @@ textarea {
         -ms-flex-pack: center;
             justify-content: center;
     position: relative;
+    border-radius: 35px;
   }
 
   .card-product__title {
@@ -1748,6 +1753,11 @@ textarea {
 
   .products__title {
     margin-bottom: 30px;
+  }
+
+  .card-product__inner {
+    padding: 25px 15px;
+    border-radius: 35px;
   }
 
   .card-product__plus {
