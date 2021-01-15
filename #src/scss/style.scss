@@ -238,6 +238,8 @@ textarea {
 	font-size: 48px;
 	line-height: 92.6%;
 	color: $titleColor;
+	font-family: "avenirnextcyr-demi", serif;
+	letter-spacing: 0.008em;
 
 	@media (max-width: $md4+px) {
 		font-size: 28px;
@@ -254,9 +256,9 @@ textarea {
 .title-4 {
 	font-weight: 700;
 	font-size: 23px;
-	line-height: 92.6%;
+	line-height: 122.6%;
 	color: $textColor;
-
+	font-family: "avenirnextcyr-demi", serif;
 	@media (max-width: $md4+px) {
 		font-size: 16px;
 	}

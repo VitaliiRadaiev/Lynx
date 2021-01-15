@@ -57,7 +57,7 @@
 
         &._active {
             & .menu__link {
-                font-weight: 800;
+                font-weight: 700;
             }
         }
     }
@@ -67,7 +67,7 @@
         font-weight: 500;
         font-size: 24px;
         line-height: 1.1em;
-        transition: all .2s ease;
+        transition: all .4s ease;
         display: inline-flex;
         justify-content: center;
         align-items: center;
@@ -80,7 +80,7 @@
 
         @media (min-width: 992px) {
             &:hover {
-                text-shadow: 0px 0px 2px $mainColor;
+                font-weight: 700;
             }
         }
     }
