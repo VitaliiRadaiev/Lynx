@@ -726,6 +726,7 @@ textarea {
   text-transform: uppercase;
   font-weight: 400;
   margin-bottom: 1.222em;
+  font-family: "avenirnextcyr-demi", serif;
 }
 
 .text-content h5 strong {
@@ -805,9 +806,6 @@ textarea {
   font-weight: 500;
   font-size: 24px;
   line-height: 1.1em;
-  -webkit-transition: all .4s ease;
-  -o-transition: all .4s ease;
-  transition: all .4s ease;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -1522,8 +1520,8 @@ textarea {
 
   .card-product:hover {
     top: -5px;
-    -webkit-box-shadow: 0px 10px 10px -10px rgba(0, 0, 0, 0.6);
-            box-shadow: 0px 10px 10px -10px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
   }
 
   .card-product__plus {
@@ -1614,6 +1612,7 @@ textarea {
 
   .contact__body {
     display: block;
+    padding-right: 15px;
   }
 
   .contact__column_1 {
@@ -1673,7 +1672,15 @@ textarea {
   }
 
   .about {
-    margin-bottom: 90px;
+    margin-bottom: 60px;
+  }
+
+  .about__body {
+    padding-bottom: 60px;
+  }
+
+  .about__img {
+    margin-bottom: 60px;
   }
 
   .card-about {
@@ -1686,7 +1693,7 @@ textarea {
   }
 
   .products {
-    margin-bottom: 90px;
+    margin-bottom: 60px;
   }
 
   .products__title {
@@ -1694,7 +1701,7 @@ textarea {
   }
 
   .contact {
-    margin-bottom: 90px;
+    margin-bottom: 60px;
   }
 
   .contact__logo {
@@ -1764,7 +1771,15 @@ textarea {
   }
 
   .about {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
+  }
+
+  .about__body {
+    padding-bottom: 40px;
+  }
+
+  .about__img {
+    margin-bottom: 40px;
   }
 
   .card-about {
@@ -1782,7 +1797,7 @@ textarea {
   }
 
   .products {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
 
   .products__title {
@@ -1807,7 +1822,7 @@ textarea {
   }
 
   .contact {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
 
   .footer__body {

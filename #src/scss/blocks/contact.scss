@@ -3,11 +3,11 @@
     margin-bottom: 143px;
 
     @media (max-width: $md3+px) {
-        margin-bottom: 90px;
+        margin-bottom: 60px;
     }
 
     @media (max-width: $md4+px) {
-        margin-bottom: 60px;
+        margin-bottom: 40px;
     }
 
     &__body {
@@ -17,6 +17,7 @@
 
         @media (max-width: $md2+px) {
             display: block;
+            padding-right: 15px;
         }
     }
 
