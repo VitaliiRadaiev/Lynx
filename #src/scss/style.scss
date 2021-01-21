@@ -366,22 +366,21 @@ button.btn-default {
 
 	& ul {
 		& > li {
-			margin-bottom: 4px;
 			&:before {
 				content: '•';
 				color: $textColor;
 				font-size: 18px;
 				display: inline-block;
+				margin-right: 6px;
 			}
 
 			& > ul {
 				padding-left: 1.61em;
 
-				& > li {
-					&:before {
-						margin-right: 6px;
-					}
-				}
+			}
+
+			&.mb {
+				margin-bottom: 20px;
 			}
 		}
 	}

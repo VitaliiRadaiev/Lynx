@@ -239,5 +239,16 @@ if (animItems.length > 0) {
 }
 
 	
+
+// == form contact error =============================
+let form = document.querySelector('.wpcf7-form');
+if(form) {
+	let outputErr = form.querySelector('.wpcf7-response-output');
+	let formTextarea = form.querySelector('.from-contact__textarea-wrap');
+	formTextarea.after(outputErr);
+}
+// == // form contact error =============================
+
+
 });
 

@@ -741,23 +741,20 @@ textarea {
   margin-bottom: 1.2em;
 }
 
-.text-content ul > li {
-  margin-bottom: 4px;
-}
-
 .text-content ul > li:before {
   content: '•';
   color: #555689;
   font-size: 18px;
   display: inline-block;
+  margin-right: 6px;
 }
 
 .text-content ul > li > ul {
   padding-left: 1.61em;
 }
 
-.text-content ul > li > ul > li:before {
-  margin-right: 6px;
+.text-content ul > li.mb {
+  margin-bottom: 20px;
 }
 
 .top-line {
@@ -1177,6 +1174,8 @@ textarea {
   display: flex;
   overflow: hidden;
   border-radius: 45px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .card-product__list-column {
@@ -1186,8 +1185,19 @@ textarea {
   padding: 23px 56px;
 }
 
+.card-product__list-column.width-100 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 100%;
+          flex: 0 1 100%;
+  background: white !important;
+}
+
 .card-product__list-column:first-child {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.card-product__list-column:nth-child(2) {
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .card-product__list-column:last-child {
@@ -1288,6 +1298,9 @@ textarea {
 
 .from-contact .submit-btn {
   margin-left: auto;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .input {
@@ -1385,6 +1398,19 @@ textarea {
   top: -1px !important;
   -webkit-box-shadow: 0px 4px 10px -10px rgba(0, 0, 0, 0.6) !important;
           box-shadow: 0px 4px 10px -10px rgba(0, 0, 0, 0.6) !important;
+}
+
+.wpcf7-form .wpcf7-not-valid-tip {
+  margin-top: 5px;
+  margin-left: 15px;
+}
+
+.wpcf7-form .wpcf7-response-output {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin: 8px 0 14px !important;
+  margin-right: 15px !important;
 }
 
 .footer {

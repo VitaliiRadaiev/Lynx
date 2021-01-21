@@ -346,6 +346,7 @@
         display: flex;
         overflow: hidden;
         border-radius: 45px;
+        flex-wrap: wrap;
 
         @media (max-width: $md2+px) {
             display: block;
@@ -365,8 +366,17 @@
             padding: 23px 15px;
         }
 
+        &.width-100 {
+            flex: 0 1 100%;
+            background: rgba(255, 255, 255, 1) !important;
+        }
+
         &:first-child {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        &:nth-child(2) {
+            background: rgba(255, 255, 255, 0.8);
         }
 
         &:last-child {

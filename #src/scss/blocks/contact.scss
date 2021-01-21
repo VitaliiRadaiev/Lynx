@@ -117,6 +117,7 @@
 
     & .submit-btn {
         margin-left: auto;
+        align-self: center;
     }
 }
 
@@ -182,5 +183,21 @@
     &:active {
         top: -1px !important;
         box-shadow: 0px 4px 10px -10px rgba(#000, 0.6) !important;
+    }
+}
+
+
+
+
+.wpcf7-form {
+    & .wpcf7-not-valid-tip {
+        margin-top: 5px;
+         margin-left: 15px;
+    }
+
+    & .wpcf7-response-output {
+        align-self: center;
+        margin: 8px 0 14px !important;
+        margin-right: 15px !important;
     }
 }
