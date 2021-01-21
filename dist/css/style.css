@@ -746,7 +746,7 @@ textarea {
   color: #555689;
   font-size: 18px;
   display: inline-block;
-  margin-right: 6px;
+  margin-right: 4px;
 }
 
 .text-content ul > li > ul {
@@ -1161,7 +1161,7 @@ textarea {
 
 .card-product__list-wrap {
   display: none;
-  margin-top: 83px;
+  margin-top: 50px;
   border-radius: 45px;
   padding: 17px 15px;
   -webkit-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
